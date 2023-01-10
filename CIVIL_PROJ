@@ -1,0 +1,63 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    float b,h, d, x,y,i;
+    int ch;
+    do{
+    printf ("\n CHOOSE A SHAPE FROM MENU");
+    printf("\n 1.Rectangle");
+    printf("\n 2.Circle");
+    printf("\n 3.Right Triangle");
+    printf("\n 4.Exit Menu");
+    printf("\n SHAPE SELECTED FROM MENU IS:  ");
+    scanf("%d", &ch);
+    printf("------------------------------------------------------------------");
+    switch(ch)
+    {
+        case 1:
+            printf("\n Enter your  depth d(mm):");
+            scanf("%f", &d);
+            printf("\n Enter your breath b(mm):");
+            scanf("%f", &b);
+            x=b/2;
+            y=d/2;
+            printf("\n Centroid of rectangle (x,y) =%f,%f\n", x,y);
+            i=(b/12)*pow(d,3);
+            printf(" Moment of inertia of rectangle is,I=%f(m^4)\n",i);
+            printf("------------------------------------------------------------------");
+            break;
+        case 2:
+            printf("\n Enter the diameter of circle:");
+            scanf("%f", &d);
+            x=d/2;
+            y=d/2;
+            i=(3.14/4)*pow(x,4);
+            printf("\n Centroid of circle (x,y) =%f, %f\n", x,y);
+            printf("\n Moment of inertia of circle,I=%f(m^4)\n",i);
+            printf("------------------------------------------------------------------");
+            break;
+        case 3:
+            printf("\n Enter the base of right triangle:");
+            scanf("%f", &b);
+            printf("\n Enter the height of right triangle:");
+            scanf("%f", &h);
+            x=b/3;
+            y=h/3;
+            i=(b/12)*pow(h,3);
+            printf("\n Centroid of right triangle (x,y)= %f,%f\n", x,y);
+            printf("\n Moment of inertia of triangle,I=%f(m^4)\n",i);
+            printf("------------------------------------------------------------------");
+            break;
+        
+        default:
+            printf(" Invalid Choice.Exit Menu\n");
+            ch=4;
+            break;
+    }
+    if (ch==4)break;
+    
+
+    }while(ch>0 && ch<4);
+    return 0;
+}
